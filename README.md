@@ -6,5 +6,16 @@
 >프로그래밍 언어로, 스크립트 언어에 해당된다. HTML, CSS와 함께 웹을 구성하는 요소 중 하나다. HTML이 웹 페이지의 기본 구조를 담당하고, CSS가 디자인을 담당한다면 **JavaScript는 웹 페이지가 사용자와 상호작용하여 동작하는 것을 담당**한다.
 ***
 
-<!-- ### 1.
-*** -->
+### 1. 사용법
+    
+* **:one: script 태그 사용**
+
+    ```html
+    <script>
+        document.write('hello world');
+    </script>
+    <script>
+        document.write(1+1);
+    </script>
+    ```
+***

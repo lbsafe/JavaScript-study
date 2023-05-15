@@ -342,4 +342,8 @@
     document.getElementByTagName('div');
     ```
     * 'div' 태그를 가지는 모든 element 목록을 리턴한다.
+
+:link:[JS-Selector][javascript-study_03] : 자바스크립트 선택자 예시
+
+[javascript-study_03]: https://lbsafe.github.io/JavaScript-study/javascript_study/html/study_03.html "JS-Selector"
 ***

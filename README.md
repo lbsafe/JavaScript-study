@@ -26,7 +26,7 @@
     :arrow_right: 간략한 테스트나 현재 웹페이지를 대상으로 사용할 수 있다.
 ***
 
-### 데이터 타입
+## 데이터 타입
 
 * **:one: 숫자 (Number)**
     * 정수형 10진수(일상생활 사용 숫자 소수점x)
@@ -280,4 +280,66 @@
     document.write(!x); 
     // false (논리 NOT 연산)
     ```
+***
+
+## 선택자 정리
+
+* **:one: querySelector()**
+    > 선택자로 찾은 여러개의 element 중 첫번째 element를 리턴한다.
+
+    ```js
+    태그 선택
+    document.querySelector("div");
+
+    Id 선택
+    document.querySelector("#id");
+
+    Class 선택
+    document.querySelector(".class");
+    ```
+
+* **:two: querySelectorAll()**
+    > 선택자로 찾은 여러개의 element를 모두 리턴한다.
+
+    ```js
+    태그 선택
+    document.querySelectorAll("div");
+
+    Id 선택
+    document.querySelectorAll("#id");
+
+    Class 선택
+    document.querySelectorAll(".class");
+
+* **:three: getElementById()**
+
+    >ID 요소 선택
+
+    ```js
+    document.getElementById('test');
+    ```
+    * id는 유일한 값이므로, 하나의 element만 리턴한다.
+
+* **:four: getElementsByClassName()**
+
+    >Class 요소 선택
+
+    ```js
+    document.getElementsByClassName('test');
+    ```
+    * 클래스 이름을 가지는 모든 element 목록을 리턴한다.
+    
+    ```js
+    document.getElementsByClassName('test1 test2');
+    ```
+    * 클래스 이름에 'test1'와 'test2' 모두를 포함하는 element만 리턴한다.
+
+* **:five: getElementByTagName()**
+
+    >태그 요소 선택
+
+    ```js
+    document.getElementByTagName('div');
+    ```
+    * 'div' 태그를 가지는 모든 element 목록을 리턴한다.
 ***

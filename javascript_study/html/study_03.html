@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <title>자바스크립트 공부</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="../common/css/animate.css">
+    <link rel="stylesheet" href="../common/css/import.css">
+    <script src="../common/js/jquery-latest.min.js"></script>
+    <script src="../common/js/plugins/jquery.fitvids.js"></script>
+    <script src="../common/js/plugins/jquery.easing.1.3.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="../common/js/wow.js"></script>
+    <script src="../common/js/common.js"></script>
+    <!--[if lt IE 9]>
+	<script src="../../common/js/html5shiv.js"></script>
+	<script src="../../common/js/respond.src.js"></script>
+    <![endif]-->
+    <style>
+        .contents_wrap{padding: 50px;}
+        h1{font-size: 50px; margin-bottom: 30px;}
+        h2{font-size: 40px; margin-bottom: 30px;}
+        p{font-size: 20px;}
+        a{color: #000;}
+        input{display: inline-block; margin-bottom: 20px;}
+        input[type="button"]{width: 120px; height: 60px; font-size: 20px; border: 1px solid #000; border-radius: 10px; cursor: pointer;}
+        input[type="button"]:first-of-type{margin-right: 30px;}
+        input[type="text"]{width: 200px; height: 30px; font-size: 16px; border: 1px solid #000;}
+        ol{font-size: 26px; margin-bottom: 30px;}
+        ol li:not(:last-of-type){margin-bottom: 15px;}
+    </style>
+</head>
+<body>
+    <div class="contents_wrap">
+        <h1><a href="#">WEB</a></h1>
+        <input type="button" value="night" onclick="
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelectorAll('a').forEach(function(item) {
+                item.style.color = 'white';
+            });
+        ">
+        <input type="button" value="day" onclick="
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black';
+            document.querySelectorAll('a').forEach(function(item) {
+                item.style.color = 'black';
+            });
+        ">
+        <ol>
+            <li>1.<a href="javascript:;">HTML</a></li>
+            <li>2.<a href="javascript:;">CSS</a></li>
+            <li>3.<a href="javascript:;">Javascript</a></li>
+        </ol>
+        <h2>Hello, KeonHee</h2>
+        <p>
+            자바스크립트 스터디
+        </p>
+    </div>
+</body>
+</html>

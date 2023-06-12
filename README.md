@@ -348,3 +348,58 @@
 
 [javascript-study_03]: https://lbsafe.github.io/JavaScript-study/javascript_study/html/study_03.html "JS-Selector"
 ***
+
+## 리팩토링(Refactoring)
+
+> 비효율적인 코드, 중복 된 코드를 정리하여 코드의 효율과 가독성을 높히면서 유지보수를 편리하게 만드는 개선 작업을 뜻한다.
+
+*ex)* **AS-IS**
+```js
+<input id="night_day" type="button" value="toggle night" onclick="
+    if(document.querySelector('#night_day').value === 'toggle night'){
+        document.querySelector('body').style.backgroundColor = 'black';
+        document.querySelector('body').style.color = 'white';
+        document.querySelectorAll('a').forEach(function(item) {
+            item.style.color = 'white';
+        });
+        document.querySelector('#night_day').value = 'toggle day'
+    }else{
+        document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color = 'black';
+        document.querySelectorAll('a').forEach(function(item) {
+            item.style.color = 'black';
+        });
+        document.querySelector('#night_day').value = 'toggle night'
+    }
+">
+```
+*ex)* **TO-BE**
+```js
+<input id="night_day" type="button" value="toggle night" onclick="
+    let target =  document.querySelector('body');
+    let target_link =  document.querySelectorAll('a');
+        
+    if(this.value === 'toggle night'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        target_link.forEach(function(item) {
+            item.style.color = 'white';
+        });
+        this.value = 'toggle day'
+    }else{
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        target_link.forEach(function(item) {
+            item.style.color = 'black';
+        });
+        this.value = 'toggle night'
+    }
+">
+```
+
+> 반복 되는 선택자를 변수로 선언하여 중복 된 소스를 정리하고, 코드의 유지보수와 성능을 높인다.
+
+:link:[JS-Refactoring][javascript-study_05] : 자바스크립트 리팩토링 예시
+
+[javascript-study_05]: https://lbsafe.github.io/JavaScript-study/javascript_study/html/study_05.html "JS-Refactoring"
+***

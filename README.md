@@ -404,7 +404,7 @@
 [javascript-study_05]: https://lbsafe.github.io/JavaScript-study/javascript_study/html/study_05.html "JS-Refactoring"
 ***
 
-## 배열(array)
+## 배열(Array)
 
 > 연관된 데이터를 모아서 관리하기 위해서 사용되는 데이터 타입.   
 변수가 하나의 데이터를 저장하기 위한 것이라면 배열은 여러 개의 데이터를 저장하기 위한 것이다.

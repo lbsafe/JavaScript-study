@@ -409,23 +409,180 @@
 > 연관된 데이터를 모아서 관리하기 위해서 사용되는 데이터 타입.   
 변수가 하나의 데이터를 저장하기 위한 것이라면 배열은 여러 개의 데이터를 저장하기 위한 것이다.
 
-```js
-let coworkers = ["egoing", "hello"];
+1. 배열 추가
 
-document.write(coworkers[0]); // egoing
-document.write(coworkers[1]); // hello
+    * Array.push();
 
-/* 배열 데이터 추가 */
-coworkers.push("KeonHee");
-coworkers.push("code");
+        > 배열의 끝에 요소 추가
 
-document.write(coworkers[2]); // KeonHee
-document.write(coworkers[3]); // code
+        ```js
+        let array = ["oh", "hello"];
 
-document.write(coworkers.length); // 4
-```
+        document.write(array[0]); // oh
+        document.write(array[1]); // hello
 
-:link:[JS-Array][javascript-study_06] : 배열 개념 예시
+        /* 배열 요소 추가 */
+        array.push("world");
+
+        document.write(array);
+        -> oh, hello, world
+        ```
+
+    * Array.unshift();
+
+        > 배열의 앞쪽에 요소 추가
+
+        ```js
+        let array = ["oh", "hello"];
+
+        document.write(array[0]); // oh
+        document.write(array[1]); // hello
+
+        /* 배열 요소 추가 */
+        array.unshift("world");
+
+        document.write(array);
+        -> world, oh, hello 
+        ```
+
+    * Array.splice();
+
+        > 지정 index 위치에 요소 추가
+
+        ```js
+        let array = ["oh", "hello"];
+
+        document.write(array[0]); // oh
+        document.write(array[1]); // hello
+
+        /* 배열 요소 추가 */
+        array.splice(2, 0, "keonhee");
+        index 2번 요소 위치 뒤에 요소 추가
+
+        document.write("array : " + array);
+        -> oh, hello, keonhee
+
+        -------------------------------------
+
+        let array = ["oh", "hello", "keonhee"];
+
+        document.write(array[0]); // oh
+        document.write(array[1]); // hello
+        document.write(array[2]); // keonhee
+
+        array.splice(1, 0, "BeeMo", "lbsafe");
+        index 1번 요소 위치 뒤에 2개의 요소 추가
+
+        document.write("array : " + array);
+        -> oh, BeeMo, lbsafe, hello, keonhee
+        ```
+
+2. 배열 삭제
+   * Array.pop();
+
+        > 배열의 끝에 요소 삭제
+
+        ```js
+        let array = ["oh", "hello", "keonhee"];
+
+        document.write(array[0]); // oh
+        document.write(array[1]); // hello
+        document.write(array[2]); // keonhee
+
+        /* 배열 요소 삭제 */
+        array.pop();
+
+        document.write(array);
+        -> oh, hello
+        ```
+
+   * Array.shift();
+
+        > 배열의 앞쪽에 요소 삭제
+
+        ```js
+        let array = ["oh", "hello", "keonhee"];
+
+        document.write(array[0]); // oh
+        document.write(array[1]); // hello
+        document.write(array[2]); // keonhee
+
+        /* 배열 요소 삭제 */
+        array.shift();
+
+        document.write(array);
+        -> hello, keonhee
+        ```
+
+    * Array.splice();
+
+        > 지정 index 위치에 요소 삭제
+
+        ```js
+        let array = ["oh", "hello", "keonhee"];
+
+        document.write(array[0]); // oh
+        document.write(array[1]); // hello
+        document.write(array[2]); // keonhee
+
+        /* 배열 요소 추가 */
+        array.splice(2, 1);
+        index 2번 요소 위치부터 1개의 요소 삭제
+
+        document.write("array : " + array);
+        -> oh, hello
+
+        /* 제거한 요소를 반환 받을 수 있음 */
+        removed = array.splice(2, 1);
+        -> removed = 'keonhee'
+
+        -------------------------------------
+
+        let array = ["oh", "hello", "keonhee"];
+
+        document.write(array[0]); // oh
+        document.write(array[1]); // hello
+        document.write(array[2]); // keonhee
+
+        array.splice(1, 2);
+        index 1번 요소 위치부터 2개의 요소 삭제
+
+        document.write("array : " + array);
+        -> oh
+        ```
+
+
+   * delete 연산자
+
+        > delete로 배열을 삭제할 경우 요소는 그대로 존재하며 값만 삭제   
+        삭제가 아닌 값을 빈 값으로 변경하기 때문에 삭제보다는 변경에 가까운 개념이다.
+
+        ```js
+        var array = ['a', 'b', 'c', 'e', 'f'];
+
+        delete array[1];
+
+        -> array = ["a", undefined, "c", "e", "f"]
+        ```
+3. 함수를 사용하지 않고 추가, 삭제 방법​​
+    > 자바스크립트는 배열의 길이를 동적으로 변경할 수 있다
+
+    ```js
+    var array = ['a', 'b', 'c'];
+
+    array[array.length] = 'e'; // 배열의 끝에 요소를 추가 
+    -> array = ['a', 'b', 'c', 'e'];
+
+    array.length = array.length - 1; // 배열의 크기를 하나 줄인다
+    -> array = ['a', 'b', 'c']
+
+    array[5] = 'g'; // index 5 에 요소를 추가, 빈요소([3],[4])는 undefined
+    array = ["a", "b", "c", undefined, undefined, "g"]
+    ```
+
+:warning:배열 중간의 요소를 추가 하거나, 삭제할 경우 함수를 사용하는 것이 편리하다.
+
+:link:[JS-Array][javascript-study_06] : 배열 개념 연습 예시
 
 [javascript-study_06]: https://lbsafe.github.io/JavaScript-study/javascript_study/html/study_06.html "JS-Array"
 ***

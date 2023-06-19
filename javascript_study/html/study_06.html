@@ -38,14 +38,66 @@
             document.write(coworkers[0]);
             document.write(coworkers[1]);
         </script>
-        <h2>add</h2>
+        <h2>push</h2>
         <script>
             coworkers.push("KeonHee");
             coworkers.push("code");
         </script>
+        <h2>unshift</h2>
+        <script>
+            coworkers.unshift("code2");
+            document.write("now : " + coworkers);
+        </script>
+        <h2>splice 추가</h2>
+        <script>
+            coworkers.splice(2, 0, 'hi'); // index 2 ('c')의 위치에 요소를 추가
+            document.write("now : " + coworkers);
+        </script>
         <h2>count</h2>
         <script>
             document.write(coworkers.length);
+            coworkers.pop();
+            coworkers.splice(0, 1);
+        </script>
+        <h2>shift</h2>
+        <script>
+            document.write("now : " + coworkers);
+        </script>
+        <br>
+        <br>
+        <script>
+            coworkers.shift();
+            document.write("shift() : " + coworkers);
+        </script>
+        <h2>pop</h2>
+        <script>
+            coworkers.pop();
+            document.write("pop() : " + coworkers);
+        </script>
+        <h2>splice</h2>
+        <script>
+            coworkers.push("egoing");
+            coworkers.push("code");
+            document.write("now : " + coworkers);
+        </script>
+        <br>
+        <br>
+        <p>0번째 부터 1개 요소 삭제</p>
+        <script>
+            coworkers.splice(0, 1);
+            document.write("splice(0, 1) : " + coworkers);
+            coworkers.push("hello");
+        </script>
+        <h2>delete</h2>
+        <script>
+            document.write("now : " + coworkers);
+        </script>
+        <br>
+        <br>
+        <p>delete 연산자는 배열 요소의 삭제가 아닌 값을 빈 값으로 변경하기 때문에 삭제보다는 변경에 가까운 개념이다.</p>
+        <script>
+            delete coworkers[0]
+            document.write("delete : " + coworkers);
         </script>
     </div>
 </body>

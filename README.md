@@ -403,3 +403,29 @@
 
 [javascript-study_05]: https://lbsafe.github.io/JavaScript-study/javascript_study/html/study_05.html "JS-Refactoring"
 ***
+
+## 배열(array)
+
+> 연관된 데이터를 모아서 관리하기 위해서 사용되는 데이터 타입.   
+변수가 하나의 데이터를 저장하기 위한 것이라면 배열은 여러 개의 데이터를 저장하기 위한 것이다.
+
+```js
+let coworkers = ["egoing", "hello"];
+
+document.write(coworkers[0]); // egoing
+document.write(coworkers[1]); // hello
+
+/* 배열 데이터 추가 */
+coworkers.push("KeonHee");
+coworkers.push("code");
+
+document.write(coworkers[2]); // KeonHee
+document.write(coworkers[3]); // code
+
+document.write(coworkers.length); // 4
+```
+
+:link:[JS-Array][javascript-study_06] : 배열 개념 예시
+
+[javascript-study_06]: https://lbsafe.github.io/JavaScript-study/javascript_study/html/study_06.html "JS-Array"
+***
